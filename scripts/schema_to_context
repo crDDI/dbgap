@@ -1,0 +1,129 @@
+#!/usr/bin/env python
+
+# Copyright (c) 2016, Mayo Clinic
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+#
+# Redistributions of source code must retain the above copyright notice, this
+#     list of conditions and the following disclaimer.
+#
+#     Redistributions in binary form must reproduce the above copyright notice,
+#     this list of conditions and the following disclaimer in the documentation
+#     and/or other materials provided with the distribution.
+#
+#     Neither the name of the <ORGANIZATION> nor the names of its contributors
+#     may be used to endorse or promote products derived from this software
+#     without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+# OF THE POSSIBILITY OF SUCH DAMAGE.
+import argparse
+from dirlistproc import DirectoryListProcessor
+import logging
+import sys
+import jsonasobj
+from typing import List
+
+template = """{
+   "@context": {}}"""
+
+
+# Map from schema type to json-ld equivalent.
+#    Notes:
+#    1)  there is no equivalent for 'null'.
+#    2)  should object map to an ID?
+#    3)  we could map tht type to string, but would be overkill
+primitive_type_map = {'array': {'@container': '@list'},
+                      'boolean': {'@type': 'xsd:boolean'},
+                      'integer': {'@type': 'xsd:integer'},
+                      'number': {'@type': 'xsd:double'},
+                      'null': {},
+                      'object': {},
+                      'string': {}}
+
+format_map = {'date-time': 'xsd:dateTime',
+              'uri': '@id'}
+
+properties_map = {'id': {'@type': '@id'},
+                  '$schema': {} }
+
+
+def primitive_type(typ: str) -> dict:
+    """ Section 3.5 (http://json-schema.org/latest/json-schema-core.html)
+    :return: typing information
+    """
+    return primitive_type_map[typ]
+
+
+def add_property(context: jsonasobj.JsonObj, p: str, v: jsonasobj.JsonObj, ns: str) -> None:
+    context.setdefault(p, {})['@id'] = ns + ':' + p
+    if 'type' in v:
+        if v.type == 'string':
+            if 'format' in v and v.format in format_map:
+                context.setdefault(p, {})['@type'] = format_map[v.format]
+        elif v.type == 'array':
+            context.setdefault(p, {})['@container'] = '@list'
+            if 'items' in v:
+                add_property(context, p, v.items, ns)
+        else:
+            pass
+    elif '$ref' in v:
+        context.setdefault(p, {})['@type'] = '@id'
+    elif 'allOf' in v:
+        pass
+    elif 'oneOf' in v:
+        pass
+    elif 'properties' in v:
+        pass
+
+
+def proc_schema(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
+    """ Process a json schema input file and emit a corresponding json-ld context outputfile
+    :param infile: name of schema file to convert
+    :param outfile: target context
+    :param opts: command arguments
+    :return: True if conversion was successful
+    """
+    schema = jsonasobj.load(open(infile))
+    schemald = jsonasobj.loads(template)
+    context = schemald['@context']
+    context[opts.namespace] = opts.nsuri
+    if 'properties' not in schema:
+        print("WHA")
+
+    [add_property(context, p, schema.properties[p], opts.namespace) for p in schema.properties._as_dict.keys()]
+
+    open(outfile, 'w').write(schemald._as_json_dumps())
+    return True
+
+
+def addargs(parser: argparse.ArgumentParser) -> None:
+    """ Add the application specific arguments to the basic directory list processor inputs
+    :param parser: parser to add additional arguments to
+    """
+    parser.add_argument("-n", "--namespace", help="Default namespace identifier", required=True)
+    parser.add_argument("-u", "--nsuri", help="URI for default namespace", required=True)
+
+
+def main(argv: List[str]) -> None:
+    """
+    Process a dbgap dataset and convert it to RDF
+    :param argv: input options (see addargs + dirlistproc documentation)
+    """
+    dlp = DirectoryListProcessor(argv, "Convert json schema(s) to jsonld context(s) ", 'json', 'json', addargs=addargs)
+    nfiles, nsuccess = dlp.run(proc_schema)
+    logging.info("Total files processed=%d Errors=%d" % (nfiles, nfiles - nsuccess))
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])

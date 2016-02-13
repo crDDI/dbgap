@@ -1,0 +1,29 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "email": {
+         "@id": "biocaddie:email"
+      },
+      "affiliation": {
+         "@id": "biocaddie:affiliation",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "firstName": {
+         "@id": "biocaddie:firstName"
+      },
+      "role": {
+         "@id": "biocaddie:role",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "lastName": {
+         "@id": "biocaddie:lastName"
+      }
+   }
+}

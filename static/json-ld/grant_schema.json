@@ -1,0 +1,25 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "awardee": {
+         "@id": "biocaddie:awardee",
+         "@container": "@list"
+      },
+      "funds": {
+         "@id": "biocaddie:funds",
+         "@container": "@list"
+      },
+      "funder": {
+         "@id": "biocaddie:funder",
+         "@container": "@list"
+      },
+      "name": {
+         "@id": "biocaddie:name"
+      }
+   }
+}

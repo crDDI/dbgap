@@ -1,0 +1,58 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "anatomicalPart": {
+         "@id": "biocaddie:anatomicalPart",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "inputOf": {
+         "@id": "biocaddie:inputOf",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "hasCharacteristic": {
+         "@id": "biocaddie:hasCharacteristic",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "role": {
+         "@id": "biocaddie:role",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "involvedInBiologicalProcess": {
+         "@id": "biocaddie:involvedInBiologicalProcess",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "instanceOfOrganism": {
+         "@id": "biocaddie:instanceOfOrganism",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "derivesFromOrganism": {
+         "@id": "biocaddie:derivesFromOrganism",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "name": {
+         "@id": "biocaddie:name"
+      },
+      "derivesFrom": {
+         "@id": "biocaddie:derivesFrom",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "bearerOfDisease": {
+         "@id": "biocaddie:bearerOfDisease",
+         "@type": "@id",
+         "@container": "@list"
+      }
+   }
+}

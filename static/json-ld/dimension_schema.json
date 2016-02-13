@@ -1,0 +1,34 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "dimensionType": {
+         "@id": "biocaddie:dimensionType",
+         "@type": "@id"
+      },
+      "name": {
+         "@id": "biocaddie:name"
+      },
+      "isAbout": {
+         "@id": "biocaddie:isAbout",
+         "@container": "@list"
+      },
+      "unit": {
+         "@id": "biocaddie:unit",
+         "@type": "@id"
+      },
+      "values": {
+         "@id": "biocaddie:values",
+         "@container": "@list"
+      },
+      "partOf": {
+         "@id": "biocaddie:partOf",
+         "@type": "@id",
+         "@container": "@list"
+      }
+   }
+}

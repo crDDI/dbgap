@@ -1,0 +1,39 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "publicationType": {
+         "@id": "biocaddie:publicationType",
+         "@type": "@id"
+      },
+      "acknowledges": {
+         "@id": "biocaddie:acknowledges",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "cites": {
+         "@id": "biocaddie:cites",
+         "@container": "@list"
+      },
+      "author": {
+         "@id": "biocaddie:author",
+         "@container": "@list"
+      },
+      "title": {
+         "@id": "biocaddie:title"
+      },
+      "license": {
+         "@id": "biocaddie:license",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "date": {
+         "@id": "biocaddie:date",
+         "@type": "xsd:dateTime"
+      }
+   }
+}

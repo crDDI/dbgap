@@ -1,0 +1,80 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "conformsTo": {
+         "@id": "biocaddie:conformsTo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "license": {
+         "@id": "biocaddie:license",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "producedBy": {
+         "@id": "biocaddie:producedBy",
+         "@type": "@id"
+      },
+      "date_info": {
+         "@id": "biocaddie:date_info",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "size": {
+         "@id": "biocaddie:size"
+      },
+      "version": {
+         "@id": "biocaddie:version"
+      },
+      "hasPartDimension": {
+         "@id": "biocaddie:hasPartDimension",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "dataType": {
+         "@id": "biocaddie:dataType",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "description": {
+         "@id": "biocaddie:description"
+      },
+      "relatedDataset": {
+         "@id": "biocaddie:relatedDataset",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "isAboutBiologicalProcess": {
+         "@id": "biocaddie:isAboutBiologicalProcess",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "downloadURL": {
+         "@id": "biocaddie:downloadURL",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "title": {
+         "@id": "biocaddie:title"
+      },
+      "creator": {
+         "@id": "biocaddie:creator",
+         "@container": "@list"
+      },
+      "isCitedBy": {
+         "@id": "biocaddie:isCitedBy",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "storedIn": {
+         "@id": "biocaddie:storedIn",
+         "@type": "@id",
+         "@container": "@list"
+      }
+   }
+}

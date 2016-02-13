@@ -1,0 +1,24 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "role": {
+         "@id": "biocaddie:role",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "name": {
+         "@id": "biocaddie:name"
+      },
+      "abbreviation": {
+         "@id": "biocaddie:abbreviation"
+      },
+      "postalAddress": {
+         "@id": "biocaddie:postalAddress"
+      }
+   }
+}

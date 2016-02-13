@@ -1,0 +1,13 @@
+{
+   "@context": {
+      "identifierInfo": {
+         "@type": "@id",
+         "@container": "@list",
+         "@id": "biocaddie:identifierInfo"
+      },
+      "biocaddie": "http://biocaddie.org/mms#",
+      "name": {
+         "@id": "biocaddie:name"
+      }
+   }
+}

@@ -1,0 +1,25 @@
+{
+   "@context": {
+      "biocaddie": "http://biocaddie.org/mms#",
+      "isUsedBy": {
+         "@id": "biocaddie:isUsedBy",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "instrumentType": {
+         "@id": "biocaddie:instrumentType"
+      },
+      "name": {
+         "@id": "biocaddie:name"
+      },
+      "identifierInfo": {
+         "@id": "biocaddie:identifierInfo",
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "manufacturer": {
+         "@id": "biocaddie:manufacturer",
+         "@container": "@list"
+      }
+   }
+}
