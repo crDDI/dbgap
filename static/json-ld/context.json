@@ -1,8 +1,8 @@
 {
   "@context": [
-    "http://localhost:8080/json-ld/identifier_info_schema.json",
-    "http://localhost:8080/json-ld/dataset_schema.json",
-    "http://localhost:8080/json-ld/dimension_schema.json",
+    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/identifier_info_schema.json",
+    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/dataset_schema.json",
+    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/dimension_schema.json",
     {
       "biocaddie": "http://biocaddie.org/mms#",
       "dbgap": "http://www.ncbi.nlm.nih.gov/gap/mms#",

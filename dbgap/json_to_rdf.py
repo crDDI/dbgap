@@ -49,6 +49,7 @@ def json_to_rdf(json_in: jsonasobj.JsonObj) -> Graph:
     :param json_in:
     :return:
     """
+    json_in['@context'] = "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/context.json"
     normalized = jsonld.normalize(json_in._as_json_obj(), {'format': 'application/nquads', 'algorithm': 'URDNA2015'})
     g = Graph()
     g.parse(data=prefixes, format="turtle")

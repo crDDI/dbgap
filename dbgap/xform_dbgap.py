@@ -28,8 +28,7 @@
 import jsonasobj
 from dbgap.constants import *
 
-# context = jsonasobj.load(open(os.path.join(os.path.dirname(__file__), '..', 'static', 'json', 'context.json')))
-context = jsonasobj.loads('{"@context": "http://localhost:8080/json/context.json"}')
+
 dimension_type_map = {'string': 'xsd:string'}
 
 
@@ -44,8 +43,6 @@ def xform_dbgap_dimension(inp: jsonasobj.JsonObj) -> None:
 
 
 def xform_dbgap_dataset(inp: jsonasobj.JsonObj) -> jsonasobj.JsonObj:
-    if 'data_table' not in inp:
-        print("HERE")
     inp.data_table['@id'] = BIOCADDIE + inp.data_table.study_id
     inp.data_table.identifierInfo = [{'identifier': DBGAP + inp.data_table.study_id,
                                       'identifierScheme': 'dbgap'}]
@@ -55,7 +52,5 @@ def xform_dbgap_dataset(inp: jsonasobj.JsonObj) -> jsonasobj.JsonObj:
     [xform_dbgap_dimension(v) for v in inp.data_table.variable]
     inp.data_table['hasPartDimension'] = [DBGAP + v.id for v in inp.data_table.variable]
 
-    # Add the context the resulting JSON
-    inp['@context'] = context['@context']
     return inp
 
