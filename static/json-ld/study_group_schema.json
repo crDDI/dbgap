@@ -1,26 +1,29 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierInfo": {
-         "@id": "biocaddie:identifierInfo",
-         "@type": "@id",
-         "@container": "@list"
+   "@context": [
+      {
+         "member": {
+            "@id": "biocaddie:member",
+            "@container": "@list"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "size": {
+            "@id": "biocaddie:size",
+            "@type": "xsd:double"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "selectionCriteria": {
+            "@id": "biocaddie:selectionCriteria",
+            "@container": "@list",
+            "@type": "@id"
+         },
+         "name": {
+            "@id": "biocaddie:name"
+         }
       },
-      "name": {
-         "@id": "biocaddie:name"
-      },
-      "size": {
-         "@id": "biocaddie:size"
-      },
-      "member": {
-         "@id": "biocaddie:member",
-         "@type": "@id",
-         "@container": "@list"
-      },
-      "selectionCriteria": {
-         "@id": "biocaddie:selectionCriteria",
-         "@type": "@id",
-         "@container": "@list"
-      }
-   }
+      "material_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

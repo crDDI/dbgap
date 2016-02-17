@@ -1,20 +1,24 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierInfo": {
-         "@id": "biocaddie:identifierInfo",
-         "@type": "@id",
-         "@container": "@list"
+   "@context": [
+      {
+         "version": {
+            "@id": "biocaddie:version"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "creator": {
+            "@id": "biocaddie:creator",
+            "@container": "@list"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "name": {
+            "@id": "biocaddie:name"
+         }
       },
-      "creator": {
-         "@id": "biocaddie:creator",
-         "@container": "@list"
-      },
-      "version": {
-         "@id": "biocaddie:version"
-      },
-      "name": {
-         "@id": "biocaddie:name"
-      }
-   }
+      "person_schema.json",
+      "organization_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

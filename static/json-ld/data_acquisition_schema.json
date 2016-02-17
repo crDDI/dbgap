@@ -1,0 +1,18 @@
+{
+   "@context": [
+      {
+         "biocaddie": "http://biocaddie.org/mms#",
+         "measures": {
+            "@id": "biocaddie:measures",
+            "@container": "@list"
+         },
+         "uses": {
+            "@id": "biocaddie:uses"
+         }
+      },
+      "activity_schema.json",
+      "instrument_schema.json",
+      "software_schema.json",
+      "dimension_schema.json"
+   ]
+}

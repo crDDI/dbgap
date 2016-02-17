@@ -1,13 +1,15 @@
 {
-   "@context": {
-      "identifierInfo": {
-         "@type": "@id",
-         "@container": "@list",
-         "@id": "biocaddie:identifierInfo"
+   "@context": [
+      {
+         "biocaddie": "http://biocaddie.org/mms#",
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "name": {
+            "@id": "biocaddie:name"
+         }
       },
-      "biocaddie": "http://biocaddie.org/mms#",
-      "name": {
-         "@id": "biocaddie:name"
-      }
-   }
+      "identifier_info_schema.json"
+   ]
 }

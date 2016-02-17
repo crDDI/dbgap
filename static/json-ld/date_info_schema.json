@@ -1,13 +1,15 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "dateType": {
-         "@id": "biocaddie:dateType",
-         "@type": "@id"
-      },
-      "date": {
-         "@id": "biocaddie:date",
-         "@type": "xsd:dateTime"
+   "@context": [
+      {
+         "biocaddie": "http://biocaddie.org/mms#",
+         "dateType": {
+            "@id": "biocaddie:dateType",
+            "@type": "@id"
+         },
+         "date": {
+            "@id": "biocaddie:date",
+            "@type": "xsd:dateTime"
+         }
       }
-   }
+   ]
 }

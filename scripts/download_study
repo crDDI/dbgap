@@ -100,8 +100,8 @@ def get_data_tables(opts: argparse.Namespace) -> List[str]:
             for fn in os.listdir(opts.indir) if os.path.isfile(os.path.join(opts.indir, fn))]
 
 
-def write_as_rdf(jsonf: str, outfile: str):
-    g = json_to_rdf(jsonasobj.loads(jsonf))
+def write_as_rdf(jsonf: str, outfile: str, schema: str):
+    g = json_to_rdf(jsonasobj.loads(jsonf), schema)
     open(outfile, 'w').write(g.serialize(format="turtle").decode('utf-8'))
 
 
@@ -128,7 +128,7 @@ def proc_xml_file(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
     if 'r' in opts.action:
         with open(outfile) as jsonf:
             rdf_fname = os.path.join(opts.rdfdir, re.sub(r'.json$', '.ttl', os.path.basename(outfile)))
-            write_as_rdf(jsonf.read(), rdf_fname)
+            write_as_rdf(jsonf.read(), rdf_fname, 'dataset_schema.json')
 
     return True
 
@@ -158,7 +158,7 @@ def download_study(opts: argparse.Namespace) -> None:
     if 'r' in opts.action:
         logging.info("Writing StudyDescription.ttl")
         json_txt = open(os.path.join(opts.outdir, 'StudyDescription.biocaddie.json')).read()
-        write_as_rdf(json_txt, os.path.join(opts.rdfdir, 'StudyDescription.ttl'))
+        write_as_rdf(json_txt, os.path.join(opts.rdfdir, 'StudyDescription.ttl'), 'study_schema.json')
 
 
 def addargs(parser: argparse.ArgumentParser) -> None:

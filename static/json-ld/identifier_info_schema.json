@@ -1,12 +1,14 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierScheme": {
-         "@id": "biocaddie:identifierScheme"
-      },
-      "identifier": {
-         "@id": "biocaddie:identifier",
-         "@type": "@id"
+   "@context": [
+      {
+         "identifierScheme": {
+            "@id": "biocaddie:identifierScheme"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "identifier": {
+            "@id": "biocaddie:identifier",
+            "@type": "@id"
+         }
       }
-   }
+   ]
 }

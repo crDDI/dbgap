@@ -1,34 +1,37 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierInfo": {
-         "@id": "biocaddie:identifierInfo",
-         "@type": "@id",
-         "@container": "@list"
+   "@context": [
+      {
+         "dimensionType": {
+            "@id": "biocaddie:dimensionType",
+            "@type": "@id"
+         },
+         "partOf": {
+            "@id": "biocaddie:partOf",
+            "@container": "@list"
+         },
+         "values": {
+            "@id": "biocaddie:values",
+            "@container": "@list"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "unit": {
+            "@id": "biocaddie:unit",
+            "@type": "@id"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "name": {
+            "@id": "biocaddie:name"
+         },
+         "isAbout": {
+            "@id": "biocaddie:isAbout",
+            "@container": "@list"
+         }
       },
-      "dimensionType": {
-         "@id": "biocaddie:dimensionType",
-         "@type": "@id"
-      },
-      "name": {
-         "@id": "biocaddie:name"
-      },
-      "isAbout": {
-         "@id": "biocaddie:isAbout",
-         "@container": "@list"
-      },
-      "unit": {
-         "@id": "biocaddie:unit",
-         "@type": "@id"
-      },
-      "values": {
-         "@id": "biocaddie:values",
-         "@container": "@list"
-      },
-      "partOf": {
-         "@id": "biocaddie:partOf",
-         "@type": "@id",
-         "@container": "@list"
-      }
-   }
+      "dataset_schema.json",
+      "material_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

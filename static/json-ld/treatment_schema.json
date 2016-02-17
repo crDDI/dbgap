@@ -1,0 +1,27 @@
+{
+   "@context": [
+      {
+         "agent": {
+            "@id": "biocaddie:agent",
+            "@type": "@id"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "intensity": {
+            "@id": "biocaddie:intensity",
+            "@container": "@list",
+            "@type": "xsd:double"
+         },
+         "concomitance": {
+            "@id": "biocaddie:concomitance",
+            "@type": "xsd:boolean"
+         },
+         "order": {
+            "@id": "biocaddie:order",
+            "@type": "xsd:double"
+         }
+      },
+      "activity_schema.json",
+      "material_schema.json",
+      "molecular_entity_schema.json"
+   ]
+}

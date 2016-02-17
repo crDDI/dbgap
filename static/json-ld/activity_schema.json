@@ -1,32 +1,36 @@
 {
-   "@context": {
-      "performedBy": {
-         "@container": "@list",
-         "@id": "biocaddie:performedBy"
+   "@context": [
+      {
+         "duration": {
+            "@id": "biocaddie:duration"
+         },
+         "title": {
+            "@id": "biocaddie:title"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "startDate": {
+            "@id": "biocaddie:startDate",
+            "@type": "xsd:dateTime"
+         },
+         "performedBy": {
+            "@id": "biocaddie:performedBy",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "location": {
+            "@id": "biocaddie:location",
+            "@type": "@id"
+         },
+         "endDate": {
+            "@id": "biocaddie:endDate",
+            "@type": "xsd:dateTime"
+         }
       },
-      "biocaddie": "http://biocaddie.org/mms#",
-      "location": {
-         "@type": "@id",
-         "@id": "biocaddie:location"
-      },
-      "duration": {
-         "@id": "biocaddie:duration"
-      },
-      "endDate": {
-         "@type": "xsd:dateTime",
-         "@id": "biocaddie:endDate"
-      },
-      "startDate": {
-         "@type": "xsd:dateTime",
-         "@id": "biocaddie:startDate"
-      },
-      "identifierInfo": {
-         "@type": "@id",
-         "@container": "@list",
-         "@id": "biocaddie:identifierInfo"
-      },
-      "title": {
-         "@id": "biocaddie:title"
-      }
-   }
+      "person_schema.json",
+      "organization_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

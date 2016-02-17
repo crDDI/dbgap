@@ -1,39 +1,45 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierInfo": {
-         "@id": "biocaddie:identifierInfo",
-         "@type": "@id",
-         "@container": "@list"
+   "@context": [
+      {
+         "acknowledges": {
+            "@id": "biocaddie:acknowledges",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "title": {
+            "@id": "biocaddie:title"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "author": {
+            "@id": "biocaddie:author",
+            "@container": "@list"
+         },
+         "publicationType": {
+            "@id": "biocaddie:publicationType",
+            "@type": "@id"
+         },
+         "license": {
+            "@id": "biocaddie:license",
+            "@container": "@list"
+         },
+         "cites": {
+            "@id": "biocaddie:cites",
+            "@container": "@list"
+         },
+         "date": {
+            "@id": "biocaddie:date",
+            "@type": "xsd:dateTime"
+         }
       },
-      "publicationType": {
-         "@id": "biocaddie:publicationType",
-         "@type": "@id"
-      },
-      "acknowledges": {
-         "@id": "biocaddie:acknowledges",
-         "@type": "@id",
-         "@container": "@list"
-      },
-      "cites": {
-         "@id": "biocaddie:cites",
-         "@container": "@list"
-      },
-      "author": {
-         "@id": "biocaddie:author",
-         "@container": "@list"
-      },
-      "title": {
-         "@id": "biocaddie:title"
-      },
-      "license": {
-         "@id": "biocaddie:license",
-         "@type": "@id",
-         "@container": "@list"
-      },
-      "date": {
-         "@id": "biocaddie:date",
-         "@type": "xsd:dateTime"
-      }
-   }
+      "grant_schema.json",
+      "organization_schema.json",
+      "publication_schema.json",
+      "person_schema.json",
+      "dateset_schema.json",
+      "license_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

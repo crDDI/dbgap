@@ -1,25 +1,31 @@
 {
-   "@context": {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "identifierInfo": {
-         "@id": "biocaddie:identifierInfo",
-         "@type": "@id",
-         "@container": "@list"
+   "@context": [
+      {
+         "funder": {
+            "@id": "biocaddie:funder",
+            "@container": "@list"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "funds": {
+            "@id": "biocaddie:funds",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "name": {
+            "@id": "biocaddie:name"
+         },
+         "awardee": {
+            "@id": "biocaddie:awardee",
+            "@container": "@list"
+         }
       },
-      "awardee": {
-         "@id": "biocaddie:awardee",
-         "@container": "@list"
-      },
-      "funds": {
-         "@id": "biocaddie:funds",
-         "@container": "@list"
-      },
-      "funder": {
-         "@id": "biocaddie:funder",
-         "@container": "@list"
-      },
-      "name": {
-         "@id": "biocaddie:name"
-      }
-   }
+      "person_schema.json",
+      "study_schema.json",
+      "dataset_schema.json",
+      "organization_schema.json",
+      "identifier_info_schema.json"
+   ]
 }

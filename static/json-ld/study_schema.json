@@ -1,0 +1,44 @@
+{
+   "@context": [
+      {
+         "biocaddie": "http://biocaddie.org/mms#",
+         "schedulesDataAcquisition": {
+            "@id": "biocaddie:schedulesDataAcquisition",
+            "@container": "@list"
+         },
+         "usesReagent": {
+            "@id": "biocaddie:usesReagent",
+            "@container": "@list"
+         },
+         "isAboutBiologicalProcess": {
+            "@id": "biocaddie:isAboutBiologicalProcess",
+            "@type": "@id"
+         },
+         "recruits": {
+            "@id": "biocaddie:recruits",
+            "@container": "@list"
+         },
+         "schedulesActivity": {
+            "@id": "biocaddie:schedulesActivity",
+            "@container": "@list"
+         },
+         "resultsIn": {
+            "@id": "biocaddie:resultsIn",
+            "@container": "@list"
+         },
+         "studyType": {
+            "@id": "biocaddie:studyType",
+            "@type": "@id"
+         },
+         "hasStudyGroup": {
+            "@id": "biocaddie:hasStudyGroup",
+            "@container": "@list"
+         }
+      },
+      "activity_schema.json",
+      "study_group.json",
+      "data_acquisition_schema.json",
+      "dataset_schema.json",
+      "material_schema.json"
+   ]
+}
