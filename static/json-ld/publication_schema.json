@@ -38,7 +38,7 @@
       "organization_schema.json",
       "publication_schema.json",
       "person_schema.json",
-      "dateset_schema.json",
+      "dataset_schema.json",
       "license_schema.json",
       "identifier_info_schema.json"
    ]
