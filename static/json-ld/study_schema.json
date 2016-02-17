@@ -36,7 +36,7 @@
          }
       },
       "activity_schema.json",
-      "study_group.json",
+      "study_group_schema.json",
       "data_acquisition_schema.json",
       "dataset_schema.json",
       "material_schema.json"
