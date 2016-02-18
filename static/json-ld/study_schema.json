@@ -1,44 +1,39 @@
 {
    "@context": [
       {
-         "biocaddie": "http://biocaddie.org/mms#",
          "schedulesDataAcquisition": {
             "@id": "biocaddie:schedulesDataAcquisition",
             "@container": "@list"
          },
-         "usesReagent": {
-            "@id": "biocaddie:usesReagent",
+         "hasStudyGroup": {
+            "@id": "biocaddie:hasStudyGroup",
             "@container": "@list"
          },
-         "isAboutBiologicalProcess": {
-            "@id": "biocaddie:isAboutBiologicalProcess",
-            "@type": "@id"
+         "studyType": {
+            "@type": "@id",
+            "@id": "biocaddie:studyType"
          },
          "recruits": {
             "@id": "biocaddie:recruits",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "usesReagent": {
+            "@id": "biocaddie:usesReagent",
             "@container": "@list"
          },
          "schedulesActivity": {
             "@id": "biocaddie:schedulesActivity",
             "@container": "@list"
          },
+         "isAboutBiologicalProcess": {
+            "@type": "@id",
+            "@id": "biocaddie:isAboutBiologicalProcess"
+         },
          "resultsIn": {
             "@id": "biocaddie:resultsIn",
             "@container": "@list"
-         },
-         "studyType": {
-            "@id": "biocaddie:studyType",
-            "@type": "@id"
-         },
-         "hasStudyGroup": {
-            "@id": "biocaddie:hasStudyGroup",
-            "@container": "@list"
          }
-      },
-      "activity_schema.json",
-      "study_group_schema.json",
-      "data_acquisition_schema.json",
-      "dataset_schema.json",
-      "material_schema.json"
+      }
    ]
 }

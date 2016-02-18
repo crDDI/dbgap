@@ -97,7 +97,8 @@ def setup_logging(opts: argparse.Namespace) -> None:
 
 def get_data_tables(opts: argparse.Namespace) -> List[str]:
     return [re.sub(r'^phs.{6}\.v.*?\.(pht.{6}\.v.+?)\..*', '\\1', fn)
-            for fn in os.listdir(opts.indir) if os.path.isfile(os.path.join(opts.indir, fn))]
+            for fn in os.listdir(opts.indir) if os.path.isfile(os.path.join(opts.indir, fn)) and
+            fn.endswith('data_dict.xml')]
 
 
 def write_as_rdf(jsonf: str, outfile: str, schema: str):

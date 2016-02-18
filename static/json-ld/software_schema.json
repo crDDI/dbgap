@@ -4,6 +4,9 @@
          "version": {
             "@id": "biocaddie:version"
          },
+         "name": {
+            "@id": "biocaddie:name"
+         },
          "license": {
             "@id": "biocaddie:license",
             "@container": "@list"
@@ -12,12 +15,7 @@
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
-         },
-         "name": {
-            "@id": "biocaddie:name"
          }
-      },
-      "license_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

@@ -5,81 +5,69 @@
             "@id": "biocaddie:conformsTo",
             "@container": "@list"
          },
-         "producedBy": {
-            "@id": "biocaddie:producedBy"
+         "biocaddie": "http://biocaddie.org/mms#",
+         "date_info": {
+            "@id": "biocaddie:date_info",
+            "@container": "@list"
          },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "relatedDataset": {
-            "@id": "biocaddie:relatedDataset",
-            "@container": "@list"
-         },
-         "downloadURL": {
-            "@id": "biocaddie:downloadURL",
-            "@container": "@list",
-            "@type": "@id"
-         },
-         "creator": {
-            "@id": "biocaddie:creator",
-            "@container": "@list"
-         },
-         "description": {
-            "@id": "biocaddie:description"
-         },
          "storedIn": {
             "@id": "biocaddie:storedIn",
             "@container": "@list"
          },
-         "size": {
-            "@id": "biocaddie:size",
-            "@type": "xsd:double"
+         "downloadURL": {
+            "@type": "@id",
+            "@id": "biocaddie:downloadURL",
+            "@container": "@list"
          },
          "title": {
             "@id": "biocaddie:title"
          },
-         "isAboutBiologicalProcess": {
-            "@id": "biocaddie:isAboutBiologicalProcess",
-            "@container": "@list"
-         },
-         "hasPartDimension": {
-            "@id": "biocaddie:hasPartDimension",
-            "@container": "@list"
-         },
-         "dataType": {
-            "@id": "biocaddie:dataType",
-            "@container": "@list",
-            "@type": "@id"
-         },
-         "version": {
-            "@id": "biocaddie:version"
+         "description": {
+            "@id": "biocaddie:description"
          },
          "license": {
             "@id": "biocaddie:license",
             "@container": "@list"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
+         "producedBy": {
+            "@id": "biocaddie:producedBy"
+         },
+         "relatedDataset": {
+            "@id": "biocaddie:relatedDataset",
+            "@container": "@list"
+         },
+         "version": {
+            "@id": "biocaddie:version"
+         },
+         "size": {
+            "@type": "xsd:double",
+            "@id": "biocaddie:size"
+         },
          "isCitedBy": {
             "@id": "biocaddie:isCitedBy",
             "@container": "@list"
          },
-         "date_info": {
-            "@id": "biocaddie:date_info",
+         "isAboutBiologicalProcess": {
+            "@id": "biocaddie:isAboutBiologicalProcess",
+            "@container": "@list"
+         },
+         "dataType": {
+            "@type": "@id",
+            "@id": "biocaddie:dataType",
+            "@container": "@list"
+         },
+         "creator": {
+            "@id": "biocaddie:creator",
+            "@container": "@list"
+         },
+         "hasPartDimension": {
+            "@id": "biocaddie:hasPartDimension",
             "@container": "@list"
          }
-      },
-      "study_schema.json",
-      "data_repository_schema.json",
-      "organization_schema.json",
-      "license_schema.json",
-      "dataset_schema.json",
-      "publication_schema.json",
-      "person_schema.json",
-      "data_standard_schema.json",
-      "biological_process_schema.json",
-      "date_info_schema.json",
-      "dimension_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

@@ -1,45 +1,38 @@
 {
    "@context": [
       {
-         "acknowledges": {
-            "@id": "biocaddie:acknowledges",
+         "author": {
+            "@id": "biocaddie:author",
             "@container": "@list"
          },
          "biocaddie": "http://biocaddie.org/mms#",
-         "title": {
-            "@id": "biocaddie:title"
+         "cites": {
+            "@id": "biocaddie:cites",
+            "@container": "@list"
          },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "author": {
-            "@id": "biocaddie:author",
+         "date": {
+            "@type": "xsd:dateTime",
+            "@id": "biocaddie:date"
+         },
+         "acknowledges": {
+            "@id": "biocaddie:acknowledges",
             "@container": "@list"
          },
          "publicationType": {
-            "@id": "biocaddie:publicationType",
-            "@type": "@id"
+            "@type": "@id",
+            "@id": "biocaddie:publicationType"
+         },
+         "title": {
+            "@id": "biocaddie:title"
          },
          "license": {
             "@id": "biocaddie:license",
             "@container": "@list"
-         },
-         "cites": {
-            "@id": "biocaddie:cites",
-            "@container": "@list"
-         },
-         "date": {
-            "@id": "biocaddie:date",
-            "@type": "xsd:dateTime"
          }
-      },
-      "grant_schema.json",
-      "organization_schema.json",
-      "publication_schema.json",
-      "person_schema.json",
-      "dataset_schema.json",
-      "license_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

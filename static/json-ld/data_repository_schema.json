@@ -1,38 +1,34 @@
 {
    "@context": [
       {
-         "identifierInfo": {
-            "@id": "biocaddie:identifierInfo",
+         "dataRepositoryDataType": {
+            "@type": "@id",
+            "@id": "biocaddie:dataRepositoryDataType",
             "@container": "@list"
          },
-         "creator": {
-            "@id": "biocaddie:creator",
-            "@container": "@list"
+         "homepage": {
+            "@type": "@id",
+            "@id": "biocaddie:homepage"
          },
          "version": {
             "@id": "biocaddie:version"
          },
-         "license": {
-            "@id": "biocaddie:license",
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
          "biocaddie": "http://biocaddie.org/mms#",
+         "creator": {
+            "@id": "biocaddie:creator",
+            "@container": "@list"
+         },
          "name": {
             "@id": "biocaddie:name"
          },
-         "dataRepositoryDataType": {
-            "@id": "biocaddie:dataRepositoryDataType",
-            "@container": "@list",
-            "@type": "@id"
-         },
-         "homepage": {
-            "@id": "biocaddie:homepage",
-            "@type": "@id"
+         "license": {
+            "@id": "biocaddie:license",
+            "@container": "@list"
          }
-      },
-      "person_schema.json",
-      "license_schema.json",
-      "organization_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

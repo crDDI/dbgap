@@ -6,8 +6,8 @@
          },
          "biocaddie": "http://biocaddie.org/mms#",
          "identifier": {
-            "@id": "biocaddie:identifier",
-            "@type": "@id"
+            "@type": "@id",
+            "@id": "biocaddie:identifier"
          }
       }
    ]

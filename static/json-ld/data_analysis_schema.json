@@ -1,10 +1,6 @@
 {
    "@context": [
       {
-         "input": {
-            "@id": "biocaddie:input",
-            "@container": "@list"
-         },
          "biocaddie": "http://biocaddie.org/mms#",
          "uses": {
             "@id": "biocaddie:uses",
@@ -13,10 +9,11 @@
          "output": {
             "@id": "biocaddie:output",
             "@container": "@list"
+         },
+         "input": {
+            "@id": "biocaddie:input",
+            "@container": "@list"
          }
-      },
-      "activity_schema.json",
-      "software_schema.json",
-      "dataset_schema.json"
+      }
    ]
 }

@@ -1,60 +1,54 @@
 {
    "@context": [
       {
-         "hasCharacteristic": {
-            "@id": "biocaddie:hasCharacteristic",
+         "derivesFromOrganism": {
+            "@type": "@id",
+            "@id": "biocaddie:derivesFromOrganism",
             "@container": "@list"
          },
          "biocaddie": "http://biocaddie.org/mms#",
-         "instanceOfOrganism": {
-            "@id": "biocaddie:instanceOfOrganism",
-            "@container": "@list",
-            "@type": "@id"
+         "anatomicalPart": {
+            "@id": "biocaddie:anatomicalPart",
+            "@container": "@list"
          },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "derivesFromOrganism": {
-            "@id": "biocaddie:derivesFromOrganism",
-            "@container": "@list",
-            "@type": "@id"
+         "role": {
+            "@type": "@id",
+            "@id": "biocaddie:role",
+            "@container": "@list"
+         },
+         "hasCharacteristic": {
+            "@id": "biocaddie:hasCharacteristic",
+            "@container": "@list"
          },
          "bearerOfDisease": {
             "@id": "biocaddie:bearerOfDisease",
+            "@container": "@list"
+         },
+         "involvedInBiologicalProcess": {
+            "@type": "@id",
+            "@id": "biocaddie:involvedInBiologicalProcess",
             "@container": "@list"
          },
          "derivesFrom": {
             "@id": "biocaddie:derivesFrom",
             "@container": "@list"
          },
-         "involvedInBiologicalProcess": {
-            "@id": "biocaddie:involvedInBiologicalProcess",
-            "@container": "@list",
-            "@type": "@id"
-         },
-         "anatomicalPart": {
-            "@id": "biocaddie:anatomicalPart",
+         "inputOf": {
+            "@id": "biocaddie:inputOf",
             "@container": "@list"
-         },
-         "role": {
-            "@id": "biocaddie:role",
-            "@container": "@list",
-            "@type": "@id"
          },
          "name": {
             "@id": "biocaddie:name"
          },
-         "inputOf": {
-            "@id": "biocaddie:inputOf",
+         "instanceOfOrganism": {
+            "@type": "@id",
+            "@id": "biocaddie:instanceOfOrganism",
             "@container": "@list"
          }
-      },
-      "disease_schema.json",
-      "data_acquisition_schema.json",
-      "material_schema.json",
-      "anatomical_part_schema.json",
-      "dimension_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

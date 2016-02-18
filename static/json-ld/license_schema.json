@@ -4,21 +4,18 @@
          "version": {
             "@id": "biocaddie:version"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
          "creator": {
             "@id": "biocaddie:creator",
             "@container": "@list"
          },
+         "name": {
+            "@id": "biocaddie:name"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
-         },
-         "name": {
-            "@id": "biocaddie:name"
          }
-      },
-      "person_schema.json",
-      "organization_schema.json",
-      "identifier_info_schema.json"
+      }
    ]
 }

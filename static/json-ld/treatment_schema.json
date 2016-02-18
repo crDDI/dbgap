@@ -1,27 +1,24 @@
 {
    "@context": [
       {
-         "agent": {
-            "@id": "biocaddie:agent",
-            "@type": "@id"
+         "concomitance": {
+            "@type": "xsd:boolean",
+            "@id": "biocaddie:concomitance"
+         },
+         "intensity": {
+            "@type": "xsd:double",
+            "@id": "biocaddie:intensity",
+            "@container": "@list"
          },
          "biocaddie": "http://biocaddie.org/mms#",
-         "intensity": {
-            "@id": "biocaddie:intensity",
-            "@container": "@list",
-            "@type": "xsd:double"
-         },
-         "concomitance": {
-            "@id": "biocaddie:concomitance",
-            "@type": "xsd:boolean"
-         },
          "order": {
-            "@id": "biocaddie:order",
-            "@type": "xsd:double"
+            "@type": "xsd:double",
+            "@id": "biocaddie:order"
+         },
+         "agent": {
+            "@type": "@id",
+            "@id": "biocaddie:agent"
          }
-      },
-      "activity_schema.json",
-      "material_schema.json",
-      "molecular_entity_schema.json"
+      }
    ]
 }

@@ -249,6 +249,15 @@ class LDSchema:
                         }
 
 
+def write_context(opts: argparse.Namespace) -> None:
+    """ Write the main context file out
+    :param opts: input options
+    """
+    context = jsonasobj.JsonObj()
+    context['@context'] = list(opts.context)
+    open(os.path.join(opts.outdir, 'context.json'), 'w').write(context._as_json_dumps())
+
+
 def process_schema(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
     """
     Process a json schema file and emit a corresponding json ld file
@@ -264,7 +273,9 @@ def process_schema(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
         jsonld = schema_parser.proc_schema(jsonasobj.load(inf))
         jsonld[opts.namespace] = opts.nsuri
         json_obj['@context'].append(jsonld)
-        json_obj['@context'] += list(schema_parser.addl_contexts)
+        # json-ld can't cope with recursive context includes, so we have to build one big context
+        # json_obj['@context'] += list(schema_parser.addl_contexts)
+        opts.context.add(infile)
         open(outfile, 'w').write(json_obj._as_json_dumps())
     return True
 
@@ -287,7 +298,9 @@ def main(argv: List[str]) -> None:
     """
     dlp = DirectoryListProcessor(argv, "Convert json schema(s) to jsonld context(s) ", 'json', 'json', addargs=addargs)
     setup_logging(dlp.opts)
+    dlp.opts.context = set()
     nfiles, nsuccess = dlp.run(process_schema)
+    write_context(dlp.opts)
     logging.info("Total files processed=%d Errors=%d" % (nfiles, nfiles - nsuccess))
 
 

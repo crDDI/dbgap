@@ -1,31 +1,29 @@
 {
-  "@context": [
-    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/identifier_info_schema.json",
-    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/dataset_schema.json",
-    "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/dimension_schema.json",
-    {
-      "biocaddie": "http://biocaddie.org/mms#",
-      "dbgap": "http://www.ncbi.nlm.nih.gov/gap/mms#",
-      "@vocab": "http://www.ncbi.nlm.nih.gov/gap/mms#",
-
-      "id" : null,
-      "_content": "dbgap:meaning",
-      "date_created": "biocaddie:date",
-      "value": {
-        "@id": "biocaddie:values",
-        "@container": "@list"
-      },
-      "identifierInfo": {
-        "@id": "biocaddie:identifierInfo"
-      },
-      "data_table": {
-        "@type": "biocaddie:DataSet"
-      },
-      "variable": {
-        "@reverse": "biocaddie:partOf",
-        "@idz": "biocaddie:hasPartDimension",
-        "@container": "@set"
-      }
-    }
-  ]
+   "@context": [
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/study_group_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/study_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/organism_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/publication_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/organization_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/license_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/grant_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/data_repository_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/activity_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/treatment_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/biological_process_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/software_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/molecular_entity_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/anatomical_part_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/dimension_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/data_standard_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/instrument_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/person_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/material_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/identifier_info_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/disease_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/dataset_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/data_acquisition_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/date_info_schema.json",
+      "/Users/mrf7578/Development/git/biocaddie/WG3-MetadataSpecifications/json-schemas/data_analysis_schema.json"
+   ]
 }
