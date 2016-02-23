@@ -1,24 +1,24 @@
 {
    "@context": [
       {
-         "isUsedBy": {
-            "@id": "biocaddie:isUsedBy",
-            "@container": "@list"
-         },
-         "manufacturer": {
-            "@id": "biocaddie:manufacturer",
-            "@container": "@list"
-         },
-         "biocaddie": "http://biocaddie.org/mms#",
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "name": {
+            "@id": "biocaddie:name"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "isUsedBy": {
+            "@id": "biocaddie:isUsedBy",
             "@container": "@list"
          },
          "instrumentType": {
             "@id": "biocaddie:instrumentType"
          },
-         "name": {
-            "@id": "biocaddie:name"
+         "manufacturer": {
+            "@id": "biocaddie:manufacturer",
+            "@container": "@list"
          }
       }
    ]

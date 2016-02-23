@@ -52,7 +52,9 @@ class DBGaPStudyInformationTestCase(unittest.TestCase):
 
     def test_biocaddie_json(self):
         raw_json = jsonasobj.loads(open(data_dir('phs001007.json')).read())
-        s = biocaddie_json(raw_json, ['pht003897.v1', 'pht003898.v1', 'pht003899.v1', 'pht003900.v1'])._as_dict
+        s = biocaddie_json(StudyIdentifier(3900, 1, 1),
+                           raw_json,
+                           ['pht003897.v1', 'pht003898.v1', 'pht003899.v1', 'pht003900.v1'])._as_dict
         self.assertTrue(dict_compare(jsonasobj.loads(open(data_dir('phs001007.biocaddie.json')).read())._as_dict, s))
 
 

@@ -2,51 +2,51 @@
    "@context": [
       {
          "derivesFromOrganism": {
-            "@type": "@id",
             "@id": "biocaddie:derivesFromOrganism",
-            "@container": "@list"
+            "@container": "@list",
+            "@type": "@id"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "anatomicalPart": {
-            "@id": "biocaddie:anatomicalPart",
-            "@container": "@list"
-         },
-         "identifierInfo": {
-            "@id": "biocaddie:identifierInfo",
-            "@container": "@list"
-         },
-         "role": {
-            "@type": "@id",
-            "@id": "biocaddie:role",
-            "@container": "@list"
-         },
-         "hasCharacteristic": {
-            "@id": "biocaddie:hasCharacteristic",
-            "@container": "@list"
-         },
-         "bearerOfDisease": {
-            "@id": "biocaddie:bearerOfDisease",
-            "@container": "@list"
+         "instanceOfOrganism": {
+            "@id": "biocaddie:instanceOfOrganism",
+            "@container": "@list",
+            "@type": "@id"
          },
          "involvedInBiologicalProcess": {
-            "@type": "@id",
             "@id": "biocaddie:involvedInBiologicalProcess",
+            "@container": "@list",
+            "@type": "@id"
+         },
+         "role": {
+            "@id": "biocaddie:role",
+            "@container": "@list",
+            "@type": "@id"
+         },
+         "anatomicalPart": {
+            "@id": "biocaddie:anatomicalPart",
             "@container": "@list"
          },
          "derivesFrom": {
             "@id": "biocaddie:derivesFrom",
             "@container": "@list"
          },
-         "inputOf": {
-            "@id": "biocaddie:inputOf",
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
          "name": {
             "@id": "biocaddie:name"
          },
-         "instanceOfOrganism": {
-            "@type": "@id",
-            "@id": "biocaddie:instanceOfOrganism",
+         "inputOf": {
+            "@id": "biocaddie:inputOf",
+            "@container": "@list"
+         },
+         "bearerOfDisease": {
+            "@id": "biocaddie:bearerOfDisease",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "hasCharacteristic": {
+            "@id": "biocaddie:hasCharacteristic",
             "@container": "@list"
          }
       }

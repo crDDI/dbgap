@@ -1,32 +1,32 @@
 {
    "@context": [
       {
-         "location": {
-            "@type": "@id",
-            "@id": "biocaddie:location"
-         },
          "biocaddie": "http://biocaddie.org/mms#",
-         "endDate": {
-            "@type": "xsd:dateTime",
-            "@id": "biocaddie:endDate"
-         },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "duration": {
-            "@id": "biocaddie:duration"
+         "startDate": {
+            "@id": "biocaddie:startDate",
+            "@type": "xsd:dateTime"
          },
          "performedBy": {
             "@id": "biocaddie:performedBy",
             "@container": "@list"
          },
+         "endDate": {
+            "@id": "biocaddie:endDate",
+            "@type": "xsd:dateTime"
+         },
+         "location": {
+            "@id": "biocaddie:location",
+            "@type": "@id"
+         },
+         "duration": {
+            "@id": "biocaddie:duration"
+         },
          "title": {
             "@id": "biocaddie:title"
-         },
-         "startDate": {
-            "@type": "xsd:dateTime",
-            "@id": "biocaddie:startDate"
          }
       }
    ]

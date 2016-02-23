@@ -1,20 +1,20 @@
 {
    "@context": [
       {
-         "version": {
-            "@id": "biocaddie:version"
-         },
+         "biocaddie": "http://biocaddie.org/mms#",
          "creator": {
             "@id": "biocaddie:creator",
+            "@container": "@list"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
          "name": {
             "@id": "biocaddie:name"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "identifierInfo": {
-            "@id": "biocaddie:identifierInfo",
-            "@container": "@list"
+         "version": {
+            "@id": "biocaddie:version"
          }
       }
    ]

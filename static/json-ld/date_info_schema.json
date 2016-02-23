@@ -1,15 +1,15 @@
 {
    "@context": [
       {
-         "date": {
-            "@type": "xsd:dateTime",
-            "@id": "biocaddie:date"
-         },
+         "biocaddie": "http://biocaddie.org/mms#",
          "dateType": {
-            "@type": "@id",
-            "@id": "biocaddie:dateType"
+            "@id": "biocaddie:dateType",
+            "@type": "@id"
          },
-         "biocaddie": "http://biocaddie.org/mms#"
+         "date": {
+            "@id": "biocaddie:date",
+            "@type": "xsd:dateTime"
+         }
       }
    ]
 }

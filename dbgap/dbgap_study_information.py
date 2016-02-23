@@ -55,8 +55,9 @@ def get_study_information(studyid: StudyIdentifier) -> str:
     return FileDownloader(STUDY_FTP_SERVER).download_file(STUDY_FILE_TEMPLATE % studyid.identifiers)
 
 
-def biocaddie_json(raw_json: jsonasobj.JsonObj, pht_entries: List[str]) -> jsonasobj.JsonObj:
+def biocaddie_json(studyid: StudyIdentifier, raw_json: jsonasobj.JsonObj, pht_entries: List[str]) -> jsonasobj.JsonObj:
     """ Convert the raw json image of the dbgap study into a biocaddie equivalent
+    :param studyid: Study identifier
     :param raw_json: raw json image
     :param pht_entries:
     :return:
@@ -65,16 +66,19 @@ def biocaddie_json(raw_json: jsonasobj.JsonObj, pht_entries: List[str]) -> jsona
     study_entry = jsonasobj.JsonObj()
 
     study_entry['@type'] = 'Study'
-    study_entry.identifierInfo = [dict(identifier=DBGAP + study.accession, identifierScheme="dbGaP")]
-    study_entry.title = study.Configuration.StudyNameEntrez
-    study_entry.description = study.Configuration.StudyNameReportPage
-    study_entry.study_types = study.Configuration.StudyTypes.StudyType
+    study_entry['@id'] = DBGAP + studyid.versionedid
+    study_entry.identifierInfo = [dict(identifier=DBGAP + studyid.versionedid, identifierScheme="dbGaP")]
+    config = study.Configuration
+    study_entry.title = config.StudyNameEntrez
+    study_entry.description = config.StudyNameReportPage
+    study_entry.studyType = config.StudyTypes.StudyType
+    study_entry.keywords = config.Diseases.Disease.vocab_source + ' - ' + config.Diseases.Disease.vocab_term
+
     # study_entry.startDate = None
     # study_entry.endDate = None
     # study_entry.duration = None
     # study_entry.location = None
     # study_entry.performedBy = None
-    # study_entry.studyType = "UNKNOWN"
     # study_entry.isAboutBiologicalProcess =self.raw
     study_entry.resultsIn = [DBGAP + pht for pht in pht_entries]
     return study_entry

@@ -42,8 +42,8 @@ if __name__ == "__main__":
 from dbgap.xform_dbgap import xform_dbgap_dataset
 from dbgap.json_to_rdf import json_to_rdf
 from dbgap.constants import *
-from dbgap_study_information import biocaddie_json, get_study_information, StudyIdentifier
-from file_downloader import FileDownloader
+from dbgap.dbgap_study_information import biocaddie_json, get_study_information, StudyIdentifier
+from dbgap.file_downloader import FileDownloader
 
 
 logNames = [logging.getLevelName(l) for l in [logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR]]
@@ -52,7 +52,7 @@ root_dir = os.path.join(os.path.dirname(__file__), '..')
 
 
 def json_needed(opts: argparse.Namespace) -> bool:
-    """ Return true if we need to update the json
+    """ Return true if we need to update the jsonƒ
     :param opts: input options
     :return:
     """
@@ -101,8 +101,8 @@ def get_data_tables(opts: argparse.Namespace) -> List[str]:
             fn.endswith('data_dict.xml')]
 
 
-def write_as_rdf(jsonf: str, outfile: str, schema: str):
-    g = json_to_rdf(jsonasobj.loads(jsonf), schema)
+def write_as_rdf(jsonf: str, outfile: str, schema_uri: str):
+    g = json_to_rdf(jsonasobj.loads(jsonf), schema_uri)
     open(outfile, 'w').write(g.serialize(format="turtle").decode('utf-8'))
 
 
@@ -120,7 +120,7 @@ def proc_xml_file(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
             logging.error("File %s:  %s" % (infile, jsoned if jsoned else "Unspecified conversion error"))
             return False
         jsoned = jsoned.replace("{ ,", "{")
-        jsonobj = xform_dbgap_dataset(jsonasobj.loads(jsoned))
+        jsonobj = xform_dbgap_dataset(jsonasobj.loads(jsoned), infile)
         if 'j' in opts.action:
             with open(outfile, 'w') as outf:
                 json.dump(json.loads(jsonobj._as_json), outf, indent='   ')
@@ -129,7 +129,7 @@ def proc_xml_file(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
     if 'r' in opts.action:
         with open(outfile) as jsonf:
             rdf_fname = os.path.join(opts.rdfdir, re.sub(r'.json$', '.ttl', os.path.basename(outfile)))
-            write_as_rdf(jsonf.read(), rdf_fname, 'dataset_schema.json')
+            write_as_rdf(jsonf.read(), rdf_fname, opts.context)
 
     return True
 
@@ -154,12 +154,12 @@ def download_study(opts: argparse.Namespace) -> None:
         json_txt = opts.gw.to_json(open(os.path.join(opts.indir, 'StudyDescription.xml')).read())
         open(os.path.join(opts.outdir, 'StudyDescription.json'), 'w').write(json_txt)
         json_obj = jsonasobj.loads(json_txt)
-        biocaddie_obj = biocaddie_json(json_obj, get_data_tables(opts))
+        biocaddie_obj = biocaddie_json(opts.identifiers, json_obj, get_data_tables(opts))
         open(os.path.join(opts.outdir, 'StudyDescription.biocaddie.json'), 'w').write(biocaddie_obj._as_json_dumps())
     if 'r' in opts.action:
         logging.info("Writing StudyDescription.ttl")
         json_txt = open(os.path.join(opts.outdir, 'StudyDescription.biocaddie.json')).read()
-        write_as_rdf(json_txt, os.path.join(opts.rdfdir, 'StudyDescription.ttl'), 'study_schema.json')
+        write_as_rdf(json_txt, os.path.join(opts.rdfdir, 'StudyDescription.ttl'), opts.context)
 
 
 def addargs(parser: argparse.ArgumentParser) -> None:
@@ -170,7 +170,7 @@ def addargs(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("action", help="(d)ownload xml, convert to (j)son-ld, convert to (r)df, (a)ll (default)",
                         choices=['d', 'j', 'r', 'a'], nargs='*', default='a')
     parser.add_argument("-v", "--version", help="Study version number (default: 1)", type=int, default=1)
-    parser.add_argument("-p", "--pvalue", help="Study 'p' number (default: 1)", type=int, default=1)
+    parser.add_argument("-p", "--pvalue", help="Study participant set number (default: 1)", type=int, default=1)
     parser.add_argument("--ftproot", help="DBGap ftp server root (default: %s)" % DBGAP_FTP_SERVER,
                         default=DBGAP_FTP_SERVER)
     parser.add_argument("-r", "--rdfdir", help="Output RDF directory (default: data/<studyid>/ttl")
@@ -178,6 +178,7 @@ def addargs(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--loglevel", help="Logging level. Default is %s" % logging.getLevelName(logging.INFO),
                         default=logging.getLevelName(logging.INFO), choices=logNames)
     parser.add_argument("--port", help="XSLT gateway port", type=int)
+    parser.add_argument("-c", "--context", help="Base URI for json-ld context", required=True)
 
 
 def main(argv: List[str]) -> None:

@@ -1,21 +1,13 @@
 {
    "@context": [
       {
-         "lastName": {
-            "@id": "biocaddie:lastName"
-         },
          "biocaddie": "http://biocaddie.org/mms#",
-         "email": {
-            "@id": "biocaddie:email"
-         },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "role": {
-            "@type": "@id",
-            "@id": "biocaddie:role",
-            "@container": "@list"
+         "lastName": {
+            "@id": "biocaddie:lastName"
          },
          "affiliation": {
             "@id": "biocaddie:affiliation",
@@ -23,6 +15,14 @@
          },
          "firstName": {
             "@id": "biocaddie:firstName"
+         },
+         "role": {
+            "@id": "biocaddie:role",
+            "@container": "@list",
+            "@type": "@id"
+         },
+         "email": {
+            "@id": "biocaddie:email"
          }
       }
    ]

@@ -1,18 +1,14 @@
 {
    "@context": [
       {
-         "homepage": {
-            "@type": "@id",
-            "@id": "biocaddie:homepage"
-         },
-         "version": {
-            "@id": "biocaddie:version"
-         },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
+         "dataStandardType": {
+            "@id": "biocaddie:dataStandardType",
+            "@type": "@id"
+         },
          "name": {
             "@id": "biocaddie:name"
          },
@@ -20,9 +16,13 @@
             "@id": "biocaddie:license",
             "@container": "@list"
          },
-         "dataStandardType": {
-            "@type": "@id",
-            "@id": "biocaddie:dataStandardType"
+         "homepage": {
+            "@id": "biocaddie:homepage",
+            "@type": "@id"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "version": {
+            "@id": "biocaddie:version"
          }
       }
    ]

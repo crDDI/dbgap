@@ -42,7 +42,17 @@ def xform_dbgap_dimension(inp: jsonasobj.JsonObj) -> None:
             del inp['type']
 
 
-def xform_dbgap_dataset(inp: jsonasobj.JsonObj) -> jsonasobj.JsonObj:
+def xform_dbgap_dataset(inp: jsonasobj.JsonObj, file_name: str) -> jsonasobj.JsonObj:
+    """ Transform the json image of a dbgap dataset into a bioCaddie compatible image
+    :param inp: json image of dbgap dataset
+    :param file_name: name of dbgap file -- needed because the purpose and context is encoded in the name itself
+    :return:
+    """
+    if 'Subject_Phenotypes' in file_name:
+        inp.data_table.context = 'fhir:Observation'
+    elif 'Sample_Attributes' in file_name:
+        inp.data_table.context = 'fhir:Specimen'
+
     inp.data_table['@id'] = BIOCADDIE + inp.data_table.study_id
     inp.data_table.identifierInfo = [{'identifier': DBGAP + inp.data_table.study_id,
                                       'identifierScheme': 'dbgap'}]

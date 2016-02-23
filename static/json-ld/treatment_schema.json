@@ -1,23 +1,23 @@
 {
    "@context": [
       {
+         "biocaddie": "http://biocaddie.org/mms#",
          "concomitance": {
-            "@type": "xsd:boolean",
-            "@id": "biocaddie:concomitance"
+            "@id": "biocaddie:concomitance",
+            "@type": "xsd:boolean"
+         },
+         "order": {
+            "@id": "biocaddie:order",
+            "@type": "xsd:double"
          },
          "intensity": {
-            "@type": "xsd:double",
             "@id": "biocaddie:intensity",
-            "@container": "@list"
-         },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "order": {
-            "@type": "xsd:double",
-            "@id": "biocaddie:order"
+            "@container": "@list",
+            "@type": "xsd:double"
          },
          "agent": {
-            "@type": "@id",
-            "@id": "biocaddie:agent"
+            "@id": "biocaddie:agent",
+            "@type": "@id"
          }
       }
    ]

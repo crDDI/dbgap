@@ -2,12 +2,12 @@
    "@context": [
       {
          "biocaddie": "http://biocaddie.org/mms#",
-         "name": {
-            "@id": "biocaddie:name"
-         },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
+         },
+         "name": {
+            "@id": "biocaddie:name"
          }
       }
    ]

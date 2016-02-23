@@ -1,22 +1,22 @@
 {
    "@context": [
       {
-         "structure": {
-            "@type": "xsd:double",
-            "@id": "biocaddie:structure"
-         },
          "role": {
-            "@type": "@id",
             "@id": "biocaddie:role",
-            "@container": "@list"
-         },
-         "name": {
-            "@id": "biocaddie:name"
+            "@container": "@list",
+            "@type": "@id"
          },
          "biocaddie": "http://biocaddie.org/mms#",
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
+         },
+         "structure": {
+            "@id": "biocaddie:structure",
+            "@type": "xsd:double"
+         },
+         "name": {
+            "@id": "biocaddie:name"
          }
       }
    ]

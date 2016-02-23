@@ -1,37 +1,37 @@
 {
    "@context": [
       {
+         "schedulesActivity": {
+            "@id": "biocaddie:schedulesActivity",
+            "@container": "@list"
+         },
+         "usesReagent": {
+            "@id": "biocaddie:usesReagent",
+            "@container": "@list"
+         },
+         "isAboutBiologicalProcess": {
+            "@id": "biocaddie:isAboutBiologicalProcess",
+            "@type": "@id"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
          "schedulesDataAcquisition": {
             "@id": "biocaddie:schedulesDataAcquisition",
             "@container": "@list"
          },
-         "hasStudyGroup": {
-            "@id": "biocaddie:hasStudyGroup",
-            "@container": "@list"
-         },
          "studyType": {
-            "@type": "@id",
-            "@id": "biocaddie:studyType"
+            "@id": "biocaddie:studyType",
+            "@type": "@id"
+         },
+         "resultsIn": {
+            "@id": "biocaddie:resultsIn",
+            "@container": "@list"
          },
          "recruits": {
             "@id": "biocaddie:recruits",
             "@container": "@list"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "usesReagent": {
-            "@id": "biocaddie:usesReagent",
-            "@container": "@list"
-         },
-         "schedulesActivity": {
-            "@id": "biocaddie:schedulesActivity",
-            "@container": "@list"
-         },
-         "isAboutBiologicalProcess": {
-            "@type": "@id",
-            "@id": "biocaddie:isAboutBiologicalProcess"
-         },
-         "resultsIn": {
-            "@id": "biocaddie:resultsIn",
+         "hasStudyGroup": {
+            "@id": "biocaddie:hasStudyGroup",
             "@container": "@list"
          }
       }

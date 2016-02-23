@@ -1,33 +1,33 @@
 {
    "@context": [
       {
+         "dimensionType": {
+            "@id": "biocaddie:dimensionType",
+            "@type": "@id"
+         },
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "unit": {
+            "@id": "biocaddie:unit",
+            "@type": "@id"
+         },
          "isAbout": {
             "@id": "biocaddie:isAbout",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "values": {
+            "@id": "biocaddie:values",
             "@container": "@list"
          },
          "partOf": {
             "@id": "biocaddie:partOf",
             "@container": "@list"
          },
-         "dimensionType": {
-            "@type": "@id",
-            "@id": "biocaddie:dimensionType"
-         },
-         "identifierInfo": {
-            "@id": "biocaddie:identifierInfo",
-            "@container": "@list"
-         },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "unit": {
-            "@type": "@id",
-            "@id": "biocaddie:unit"
-         },
          "name": {
             "@id": "biocaddie:name"
-         },
-         "values": {
-            "@id": "biocaddie:values",
-            "@container": "@list"
          }
       }
    ]

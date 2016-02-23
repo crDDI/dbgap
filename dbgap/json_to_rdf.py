@@ -43,16 +43,14 @@ prefixes = """
 @prefix dct: <http://purl.org/dc/terms/> .
 """
 
-schema_uri = "https://raw.githubusercontent.com/crDDI/dbgap/master/static/json-ld/"
 
-
-def json_to_rdf(json_in: jsonasobj.JsonObj, schema: str) -> Graph:
+def json_to_rdf(json_in: jsonasobj.JsonObj, schema_uri: str) -> Graph:
     """ Use the jsonld processor to convert the json into an RDF graph
     :param json_in:
-    :param schema: name of schema file
+    :param schema_uri: the base URI of the schema file
     :return: RDF graph
     """
-    json_in['@context'] = schema_uri + schema
+    json_in['@context'] = schema_uri + ('/' if schema_uri[-1] not in ['/', '#'] else '') + 'context.json'
     normalized = jsonld.normalize(json_in._as_json_obj(), {'format': 'application/nquads', 'algorithm': 'URDNA2015'})
     g = Graph()
     g.parse(data=prefixes, format="turtle")

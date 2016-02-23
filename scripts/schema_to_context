@@ -255,6 +255,10 @@ def write_context(opts: argparse.Namespace) -> None:
     """
     context = jsonasobj.JsonObj()
     context['@context'] = list(opts.context)
+    context['@context'].append(
+          {"dbgap": "http://www.ncbi.nlm.nih.gov/gap/mms#",
+           "biocaddie": "http://biocaddie.org/mms#",
+           "@vocab": "http://www.ncbi.nlm.nih.gov/gap/mms#"})
     open(os.path.join(opts.outdir, 'context.json'), 'w').write(context._as_json_dumps())
 
 
@@ -275,7 +279,8 @@ def process_schema(infile: str, outfile: str, opts: argparse.Namespace) -> bool:
         json_obj['@context'].append(jsonld)
         # json-ld can't cope with recursive context includes, so we have to build one big context
         # json_obj['@context'] += list(schema_parser.addl_contexts)
-        opts.context.add(infile)
+        # opts.context.add(schema_uri + os.path.basename(outfile))
+        opts.context.add(os.path.basename(outfile))
         open(outfile, 'w').write(json_obj._as_json_dumps())
     return True
 

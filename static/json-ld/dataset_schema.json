@@ -1,36 +1,16 @@
 {
    "@context": [
       {
-         "conformsTo": {
-            "@id": "biocaddie:conformsTo",
-            "@container": "@list"
-         },
-         "biocaddie": "http://biocaddie.org/mms#",
-         "date_info": {
-            "@id": "biocaddie:date_info",
-            "@container": "@list"
-         },
-         "identifierInfo": {
-            "@id": "biocaddie:identifierInfo",
-            "@container": "@list"
-         },
-         "storedIn": {
-            "@id": "biocaddie:storedIn",
-            "@container": "@list"
-         },
-         "downloadURL": {
-            "@type": "@id",
-            "@id": "biocaddie:downloadURL",
-            "@container": "@list"
-         },
-         "title": {
-            "@id": "biocaddie:title"
+         "dataType": {
+            "@id": "biocaddie:dataType",
+            "@container": "@list",
+            "@type": "@id"
          },
          "description": {
             "@id": "biocaddie:description"
          },
-         "license": {
-            "@id": "biocaddie:license",
+         "isCitedBy": {
+            "@id": "biocaddie:isCitedBy",
             "@container": "@list"
          },
          "producedBy": {
@@ -40,32 +20,52 @@
             "@id": "biocaddie:relatedDataset",
             "@container": "@list"
          },
-         "version": {
-            "@id": "biocaddie:version"
+         "title": {
+            "@id": "biocaddie:title"
          },
          "size": {
-            "@type": "xsd:double",
-            "@id": "biocaddie:size"
+            "@id": "biocaddie:size",
+            "@type": "xsd:double"
          },
-         "isCitedBy": {
-            "@id": "biocaddie:isCitedBy",
+         "date_info": {
+            "@id": "biocaddie:date_info",
+            "@container": "@list"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "identifierInfo": {
+            "@id": "biocaddie:identifierInfo",
+            "@container": "@list"
+         },
+         "storedIn": {
+            "@id": "biocaddie:storedIn",
+            "@container": "@list"
+         },
+         "hasPartDimension": {
+            "@id": "biocaddie:hasPartDimension",
+            "@container": "@list"
+         },
+         "downloadURL": {
+            "@id": "biocaddie:downloadURL",
+            "@container": "@list",
+            "@type": "@id"
+         },
+         "creator": {
+            "@id": "biocaddie:creator",
             "@container": "@list"
          },
          "isAboutBiologicalProcess": {
             "@id": "biocaddie:isAboutBiologicalProcess",
             "@container": "@list"
          },
-         "dataType": {
-            "@type": "@id",
-            "@id": "biocaddie:dataType",
+         "conformsTo": {
+            "@id": "biocaddie:conformsTo",
             "@container": "@list"
          },
-         "creator": {
-            "@id": "biocaddie:creator",
-            "@container": "@list"
+         "version": {
+            "@id": "biocaddie:version"
          },
-         "hasPartDimension": {
-            "@id": "biocaddie:hasPartDimension",
+         "license": {
+            "@id": "biocaddie:license",
             "@container": "@list"
          }
       }

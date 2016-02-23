@@ -1,25 +1,25 @@
 {
    "@context": [
       {
-         "funds": {
-            "@id": "biocaddie:funds",
-            "@container": "@list"
-         },
          "funder": {
             "@id": "biocaddie:funder",
-            "@container": "@list"
-         },
-         "awardee": {
-            "@id": "biocaddie:awardee",
             "@container": "@list"
          },
          "identifierInfo": {
             "@id": "biocaddie:identifierInfo",
             "@container": "@list"
          },
-         "biocaddie": "http://biocaddie.org/mms#",
          "name": {
             "@id": "biocaddie:name"
+         },
+         "biocaddie": "http://biocaddie.org/mms#",
+         "awardee": {
+            "@id": "biocaddie:awardee",
+            "@container": "@list"
+         },
+         "funds": {
+            "@id": "biocaddie:funds",
+            "@container": "@list"
          }
       }
    ]
