@@ -12,7 +12,7 @@ if sys.version_info < (3, 5):
 
 setup(
     name='dbgap',
-    version='0.1.0',
+    version='0.2.0',
     packages=['dbgap'],
     url='http://github.com/crDDI/dbgap',
     license='BSD 3-Clause license',
@@ -20,8 +20,8 @@ setup(
     author_email='solbrig.harold@mayo.edu',
     description='dbGaP to bioCaddie conversion utility',
     long_description='A set of utilities for transforming dbGaP to bioCaddie RDF',
-    requires=requires,
-    scripts=['scripts/download_study', 'scripts/schema_to_context'],
+    install_requires=requires,
+    scripts=['scripts/download_study'],
     classifiers=[
         'Topic :: Software Development :: Libraries',
         'Programming Language :: Python :: 3',

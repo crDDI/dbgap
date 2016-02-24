@@ -26,7 +26,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 # OF THE POSSIBILITY OF SUCH DAMAGE.
 import jsonasobj
-from typing import List
+from typing import List, Union
 
 from dbgap.constants import *
 from dbgap.file_downloader import FileDownloader
@@ -52,7 +52,10 @@ class StudyIdentifier:
 
 
 def get_study_information(studyid: StudyIdentifier) -> str:
-    return FileDownloader(STUDY_FTP_SERVER).download_file(STUDY_FILE_TEMPLATE % studyid.identifiers)
+    return FileDownloader(DBGAP_FTP_SERVER).download_file(STUDY_FILE_TEMPLATE % studyid.identifiers)
+
+def list_or_element(arg: Union[List[object], object]) -> object:
+    return arg[0] if isinstance(arg, List) else arg
 
 
 def biocaddie_json(studyid: StudyIdentifier, raw_json: jsonasobj.JsonObj, pht_entries: List[str]) -> jsonasobj.JsonObj:
@@ -62,17 +65,20 @@ def biocaddie_json(studyid: StudyIdentifier, raw_json: jsonasobj.JsonObj, pht_en
     :param pht_entries:
     :return:
     """
-    study = raw_json.GaPExchange.Studies.Study
+    study = list_or_element(raw_json.GaPExchange.Studies.Study).Configuration
     study_entry = jsonasobj.JsonObj()
 
-    study_entry['@type'] = 'Study'
+    study_entry['@type'] = BIOCADDIE + 'Study'
     study_entry['@id'] = DBGAP + studyid.versionedid
     study_entry.identifierInfo = [dict(identifier=DBGAP + studyid.versionedid, identifierScheme="dbGaP")]
-    config = study.Configuration
-    study_entry.title = config.StudyNameEntrez
-    study_entry.description = config.StudyNameReportPage
-    study_entry.studyType = config.StudyTypes.StudyType
-    study_entry.keywords = config.Diseases.Disease.vocab_source + ' - ' + config.Diseases.Disease.vocab_term
+    study_entry.title = study.StudyNameEntrez
+    study_entry.description = study.StudyNameReportPage
+    study_entry.studyType = list_or_element(study.StudyTypes.StudyType)
+    d0 = list_or_element(list_or_element(study.Diseases.Disease))
+    study_entry.keywords = d0.vocab_source + ' - ' + d0.vocab_term
+    if isinstance(study.Diseases.Disease, List):
+        study_entry.keywords += ', ' + ','.join([((e.vocab_source + ' - ') if e.vocab_source != d0.vocab_source else '')
+                                                + e.vocab_term for e in study.Diseases.Disease])
 
     # study_entry.startDate = None
     # study_entry.endDate = None

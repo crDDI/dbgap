@@ -34,11 +34,11 @@ dimension_type_map = {'string': 'xsd:string'}
 
 def xform_dbgap_dimension(inp: jsonasobj.JsonObj) -> None:
         inp['@type'] = BIOCADDIE + "Dimension"
-        inp['@id'] = BIOCADDIE + inp.id
-        inp['identifierInfo'] = [{'identifier': DBGAP + inp.id,
+        inp['@id'] = DBGAP + inp.id
+        inp.identifierInfo = [{'identifier': DBGAP + inp.id,
                                   'identifierScheme': 'dbgap'}]
         if 'type' in inp and inp.type in dimension_type_map:
-            inp['dimensionType'] = dimension_type_map[inp.type]
+            inp.dimensionType = dimension_type_map[inp.type]
             del inp['type']
 
 
@@ -53,14 +53,14 @@ def xform_dbgap_dataset(inp: jsonasobj.JsonObj, file_name: str) -> jsonasobj.Jso
     elif 'Sample_Attributes' in file_name:
         inp.data_table.context = 'fhir:Specimen'
 
-    inp.data_table['@id'] = BIOCADDIE + inp.data_table.study_id
+    inp.data_table['@id'] = DBGAP + inp.data_table.study_id
     inp.data_table.identifierInfo = [{'identifier': DBGAP + inp.data_table.study_id,
                                       'identifierScheme': 'dbgap'}]
     inp.data_table.date_info = [{'date': inp.data_table.date_created,
                                  'dateType': 'dct:created'}]
     inp.data_table['@type'] = BIOCADDIE + "Dataset"
     [xform_dbgap_dimension(v) for v in inp.data_table.variable]
-    inp.data_table['hasPartDimension'] = [DBGAP + v.id for v in inp.data_table.variable]
+    inp.data_table.hasPartDimension = [DBGAP + v.id for v in inp.data_table.variable]
 
     return inp
 

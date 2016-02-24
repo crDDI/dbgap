@@ -25,10 +25,6 @@
       "data_standard_schema.json",
       "instrument_schema.json",
       "person_schema.json",
-      {
-         "biocaddie": "http://biocaddie.org/mms#",
-         "dbgap": "http://www.ncbi.nlm.nih.gov/gap/mms#",
-         "@vocab": "http://www.ncbi.nlm.nih.gov/gap/mms#"
-      }
+      "dbgap_context.json"
    ]
 }

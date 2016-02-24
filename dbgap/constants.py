@@ -30,7 +30,6 @@ BIOCADDIE = "biocaddie:"
 DBGAP = "dbgap:"
 
 DBGAP_FTP_SERVER = "ftp.wip.ncbi.nlm.nih.gov"
-STUDY_FTP_SERVER = 'ftp.ncbi.nlm.nih.gov'
 STUDY_FILE_TEMPLATE = 'dbgap/studies/%(studyid)s/%(fullid)s/GapExchange_%(fullid)s.xml'
 STUDY_DIRECTORY_TEMPLATE = "/dbgap/studies/%(studyid)s/%(fullid)s/pheno_variable_summaries"
 

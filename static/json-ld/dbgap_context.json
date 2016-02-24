@@ -1,0 +1,6 @@
+{
+     "@context": {
+         "dbgap": "http://www.ncbi.nlm.nih.gov/gap/mms#",
+         "@vocab": "http://www.ncbi.nlm.nih.gov/gap/mms#"
+      }
+}
