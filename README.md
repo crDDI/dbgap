@@ -12,6 +12,40 @@ This package contains a general utility that allows you to:
 5. Transform RDF into bioCADDIE compatible JSON
 
 ## Installation
+1. [Make sure you have a running image of python 3](python3)
+2. Enter the appropriate virtual environment
+
+```bash
+> . myenv/bin/activate
+(myenv) >
+```
+3a. Install ```dbgap``` from github
+
+```bash
+(myenv) > git clone https://github.com/crDDI/dbgap
+(myenv) > cd dbgap
+(myenv) > python setup.py install
+```
+
+3b. Install ```dbgap``` from PyPi
+
+```bash
+(myenv) > pip install dbgap
+```
+
+4 . Run ```download_study```
+
+```bash
+(myenv) > download_study
+usage: download_study [-h] [-i [INFILE [INFILE ...]]] [-id INDIR]
+                      [-o [OUTFILE [OUTFILE ...]]] [-od OUTDIR] [-f] [-s]
+                      [-v VERSION] [-p PVALUE] [--ftproot FTPROOT] [-r RDFDIR]
+                      [--logfile LOGFILE]
+                      [--loglevel {DEBUG,INFO,WARNING,ERROR}] [--port PORT]
+                      [-c CONTEXT]
+                      studyid [{d,j,r,a} [{d,j,r,a} ...]]
+download_study: error: the following arguments are required: studyid
+```
 
 ## Use
 
